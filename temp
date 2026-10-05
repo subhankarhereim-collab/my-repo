@@ -1,0 +1,4 @@
+Azure OpenAI (GPT-6 + embeddings) is the core of the app: it reads each paper, finds drug–target–disease links, writes hypotheses and answers chat. These models can't run on a laptop, and each paper needs many model calls, so we need this quota.
+Neo4j AuraDB, AI Search, Storage and Cosmos DB keep the knowledge graph, search index, PDFs and user data (chat, upload status, hypotheses) in one safe, shared place instead of on one laptop.
+Container Apps and its Registry run the web app and its API at a link people can open. Functions processes uploaded papers in the background, because one paper takes several minutes and web requests are cut off after about 4 minutes.
+Key Vault, Entra ID and Application Insights keep keys out of the code, let only EY staff sign in, and show us errors during the demo.
